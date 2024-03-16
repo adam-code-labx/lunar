@@ -13,6 +13,3 @@ parameters:
         -
             message: '#Unsafe usage of new static\(\).#'
             path: packages/core/src/Base/Traits/HasModelExtending.php
-        -
-            message: '#.*#'
-            path: packages/core/src/Base/StandardMediaDefinitions.php
