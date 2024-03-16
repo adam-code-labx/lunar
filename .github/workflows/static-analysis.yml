@@ -1,4 +1,4 @@
-name: "Static Analysis"
+name: "PHPStan"
 on:
   pull_request:
 defaults:
