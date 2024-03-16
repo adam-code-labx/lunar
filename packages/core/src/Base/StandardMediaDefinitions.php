@@ -13,7 +13,7 @@ class StandardMediaDefinitions implements MediaDefinitionsInterface
     {
         // Add a conversion for the admin panel to use
         $model->addMediaConversion('small')
-            ->fit(Fit::Fill, 300, 300) // @phpstan-ignore-line
+            ->fit(Fit::Fill, 300, 300)
             ->sharpen(10)
             ->keepOriginalImageFormat();
     }
@@ -60,7 +60,7 @@ class StandardMediaDefinitions implements MediaDefinitionsInterface
             foreach ($conversions as $key => $conversion) {
                 $model->addMediaConversion($key)
                     ->fit(
-                        Fit::Fill, // @phpstan-ignore-line
+                        Fit::Fill,
                         $conversion['width'],
                         $conversion['height']
                     )->keepOriginalImageFormat();
