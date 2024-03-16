@@ -39,6 +39,7 @@ jobs:
           coverage: none
       - name: Install dependencies
         run: |
+          composer config github-oauth.github.com "${{ secrets.GITHUB_TOKEN }}"
           composer require "laravel/framework:${{ matrix.laravel }}"  --no-interaction --no-update
           composer require "orchestra/testbench:${{ matrix.testbench }}" --dev --no-interaction --no-update
           composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction
