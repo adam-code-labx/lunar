@@ -18,16 +18,17 @@ return [
         'path' => env('FALLBACK_IMAGE_PATH', null),
     ],
 
-    'fit' => [
-        // @phpstan-ignore-next-line
-        'fill' => phpversion() >= 8.2 ? Spatie\Image\Enums\Fit::Fill : Spatie\Image\Manipulations\Manipulations::FIT_FILL,
-        // @phpstan-ignore-next-line
-        'contain' => phpversion() >= 8.2 ? Spatie\Image\Enums\Fit::Contain : Spatie\Image\Manipulations\Manipulations::FIT_CONTAIN,
-        // @phpstan-ignore-next-line
-        'max' => phpversion() >= 8.2 ? Spatie\Image\Enums\Fit::Max : Spatie\Image\Manipulations\Manipulations::FIT_MAX,
-        // @phpstan-ignore-next-line
-        'stretch' => phpversion() >= 8.2 ? Spatie\Image\Enums\Fit::Stretch : Spatie\Image\Manipulations\Manipulations::FIT_STRETCH,
-        // @phpstan-ignore-next-line
-        'crop' => phpversion() >= 8.2 ? Spatie\Image\Enums\Fit::Crop : Spatie\Image\Manipulations\Manipulations::FIT_CROP,
+    'fit' => ! class_exists('Spatie\Image\Manipulations\Manipulations') ? [
+        'fill' => Spatie\Image\Enums\Fit::Fill,
+        'contain' => Spatie\Image\Enums\Fit::Contain,
+        'max' => Spatie\Image\Enums\Fit::Max,
+        'stretch' => Spatie\Image\Enums\Fit::Stretch,
+        'crop' => Spatie\Image\Enums\Fit::Crop,
+    ] : [
+        'fill' => Spatie\Image\Manipulations\Manipulations::FIT_FILL,
+        'contain' => Spatie\Image\Manipulations\Manipulations::FIT_CONTAIN,
+        'max' => Spatie\Image\Manipulations\Manipulations::FIT_MAX,
+        'stretch' => Spatie\Image\Manipulations\Manipulations::FIT_STRETCH,
+        'crop' => Spatie\Image\Manipulations\Manipulations::FIT_CROP,
     ],
 ];
