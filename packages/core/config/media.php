@@ -18,4 +18,11 @@ return [
         'path' => env('FALLBACK_IMAGE_PATH', null),
     ],
 
+    'fit' => [
+        'fill' => phpversion() >= 8.2 ? Spatie\Image\Enums\Fit::Fill : Spatie\Image\Manipulations\Manipulations::FIT_FILL,
+        'contain' => phpversion() >= 8.2 ? Spatie\Image\Enums\Fit::Contain : Spatie\Image\Manipulations\Manipulations::FIT_CONTAIN,
+        'max' => phpversion() >= 8.2 ? Spatie\Image\Enums\Fit::Max : Spatie\Image\Manipulations\Manipulations::FIT_MAX,
+        'stretch' => phpversion() >= 8.2 ? Spatie\Image\Enums\Fit::Stretch : Spatie\Image\Manipulations\Manipulations::FIT_STRETCH,
+        'crop' => phpversion() >= 8.2 ? Spatie\Image\Enums\Fit::Crop : Spatie\Image\Manipulations\Manipulations::FIT_CROP,
+    ],
 ];

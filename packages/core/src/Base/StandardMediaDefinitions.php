@@ -2,7 +2,6 @@
 
 namespace Lunar\Base;
 
-use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\MediaCollections\MediaCollection;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -13,7 +12,7 @@ class StandardMediaDefinitions implements MediaDefinitionsInterface
     {
         // Add a conversion for the admin panel to use
         $model->addMediaConversion('small')
-            ->fit(Fit::Fill, 300, 300)
+            ->fit(config('lunar.media.fit'), 300, 300)
             ->sharpen(10)
             ->keepOriginalImageFormat();
     }
@@ -60,7 +59,7 @@ class StandardMediaDefinitions implements MediaDefinitionsInterface
             foreach ($conversions as $key => $conversion) {
                 $model->addMediaConversion($key)
                     ->fit(
-                        Fit::Fill,
+                        config('lunar.media.fit'),
                         $conversion['width'],
                         $conversion['height']
                     )->keepOriginalImageFormat();
