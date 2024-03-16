@@ -2,7 +2,6 @@
 
 namespace Lunar\Base;
 
-use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\MediaCollections\MediaCollection;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -14,7 +13,7 @@ class StandardMediaDefinitions implements MediaDefinitionsInterface
     public function __construct()
     {
         $this->fill = phpversion() >= 8.2
-            ? Fit::Fill
+            ? class_exists('Spatie\Image\Enums\Fit') ? \Spatie\Image\Enums\Fit::Fill : null
             : Spatie\Image\Manipulations\Manipulations::FIT_FILL; // @phpstan-ignore-line
     }
 
