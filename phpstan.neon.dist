@@ -13,3 +13,6 @@ parameters:
         -
             message: '#Unsafe usage of new static\(\).#'
             path: packages/core/src/Base/Traits/HasModelExtending.php
+        -
+            message: '#Access to constant Fill on an unknown class Spatie\Image\Enums\Fit#'
+            path: packages/core/src/Base/StandardMediaDefinitions.php
