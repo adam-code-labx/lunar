@@ -9,7 +9,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class StandardMediaDefinitions implements MediaDefinitionsInterface
 {
-    protected ?Fit $fill;
+    protected $fill;
 
     public function __construct()
     {
