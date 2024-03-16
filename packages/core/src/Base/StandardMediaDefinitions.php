@@ -9,6 +9,8 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class StandardMediaDefinitions implements MediaDefinitionsInterface
 {
+    protected ?Fit $fill;
+
     public function __construct()
     {
         $this->fill = phpversion() >= 8.2
