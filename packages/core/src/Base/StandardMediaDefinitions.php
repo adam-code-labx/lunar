@@ -2,9 +2,7 @@
 
 namespace Lunar\Base;
 
-// @phpstan-ignore-next-line
 use Spatie\Image\Enums\Fit;
-
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\MediaCollections\MediaCollection;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
