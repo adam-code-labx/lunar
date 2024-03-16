@@ -18,7 +18,7 @@ return [
         'path' => env('FALLBACK_IMAGE_PATH', null),
     ],
 
-    'fit' => ! class_exists('Spatie\Image\Manipulations\Manipulations') ? [
+    'fit' => class_exists('Spatie\Image\Enums\Fit') ? [
         'fill' => Spatie\Image\Enums\Fit::Fill,
         'contain' => Spatie\Image\Enums\Fit::Contain,
         'max' => Spatie\Image\Enums\Fit::Max,
