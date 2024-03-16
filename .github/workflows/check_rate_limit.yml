@@ -1,7 +1,7 @@
 name: GitHub Actions Rate-Limit Reporter
 
 on:
-  workflow_dispatch:
+  push:
 
 jobs:
   report_rate_limit:
