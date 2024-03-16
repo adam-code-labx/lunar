@@ -19,10 +19,15 @@ return [
     ],
 
     'fit' => [
+        // @phpstan-ignore-next-line
         'fill' => phpversion() >= 8.2 ? Spatie\Image\Enums\Fit::Fill : Spatie\Image\Manipulations\Manipulations::FIT_FILL,
+        // @phpstan-ignore-next-line
         'contain' => phpversion() >= 8.2 ? Spatie\Image\Enums\Fit::Contain : Spatie\Image\Manipulations\Manipulations::FIT_CONTAIN,
+        // @phpstan-ignore-next-line
         'max' => phpversion() >= 8.2 ? Spatie\Image\Enums\Fit::Max : Spatie\Image\Manipulations\Manipulations::FIT_MAX,
+        // @phpstan-ignore-next-line
         'stretch' => phpversion() >= 8.2 ? Spatie\Image\Enums\Fit::Stretch : Spatie\Image\Manipulations\Manipulations::FIT_STRETCH,
+        // @phpstan-ignore-next-line
         'crop' => phpversion() >= 8.2 ? Spatie\Image\Enums\Fit::Crop : Spatie\Image\Manipulations\Manipulations::FIT_CROP,
     ],
 ];
