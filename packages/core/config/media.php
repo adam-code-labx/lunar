@@ -17,18 +17,4 @@ return [
         'url' => env('FALLBACK_IMAGE_URL', null),
         'path' => env('FALLBACK_IMAGE_PATH', null),
     ],
-
-    'fit' => class_exists('Spatie\Image\Enums\Fit') ? [
-        'fill' => Spatie\Image\Enums\Fit::Fill,
-        'contain' => Spatie\Image\Enums\Fit::Contain,
-        'max' => Spatie\Image\Enums\Fit::Max,
-        'stretch' => Spatie\Image\Enums\Fit::Stretch,
-        'crop' => Spatie\Image\Enums\Fit::Crop,
-    ] : [
-        'fill' => Spatie\Image\Manipulations\Manipulations::FIT_FILL,
-        'contain' => Spatie\Image\Manipulations\Manipulations::FIT_CONTAIN,
-        'max' => Spatie\Image\Manipulations\Manipulations::FIT_MAX,
-        'stretch' => Spatie\Image\Manipulations\Manipulations::FIT_STRETCH,
-        'crop' => Spatie\Image\Manipulations\Manipulations::FIT_CROP,
-    ],
 ];
