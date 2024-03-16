@@ -1,0 +1,13 @@
+name: GitHub Actions Rate-Limit Reporter
+
+on:
+  workflow_dispatch:
+
+jobs:
+  report_rate_limit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GitHub Actions Rate-Limit Reporter
+        uses: collinmcneese/actions-rate-limit-reporter@v1.1.3
+        with:
+          access-token: ${{ secrets.GITHUB_TOKEN }}
