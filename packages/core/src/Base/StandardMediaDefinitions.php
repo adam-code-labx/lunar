@@ -2,20 +2,14 @@
 
 namespace Lunar\Base;
 
+use Lunar\Base\Traits\SpatieImageFillWorkaround;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\MediaCollections\MediaCollection;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class StandardMediaDefinitions implements MediaDefinitionsInterface
 {
-    protected $fill;
-
-    public function __construct()
-    {
-        $this->fill = phpversion() >= 8.2
-            ? class_exists('Spatie\Image\Enums\Fit') ? \Spatie\Image\Enums\Fit::Fill : null
-            : Spatie\Image\Manipulations\Manipulations::FIT_FILL; // @phpstan-ignore-line
-    }
+    use SpatieImageFillWorkaround;
 
     public function registerMediaConversions(HasMedia $model, Media $media = null): void
     {
